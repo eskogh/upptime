@@ -15,13 +15,34 @@
 
 
 name: Graphs CI
+
 on:
   push:
     paths:
-      - '.github/workflows/graphs.yml'
+      - ".github/workflows/graphs.yml"   # force initial indexing
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * *"                  # daily
   repository_dispatch:
-    types: [graphs]
-  workflow_dispatch:
+    types: [graphs]                      # used by Setup CI
+  workflow_dispatch:                      # allow manual runs
+
+jobs:
+  release:
+    name: Generate graphs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Use the triggering ref; if none, default to the repo default branch
+          ref: ${{ github.ref_name || 'main' }}
+          token: ${{ secrets.GH_PAT || github.token }}
+
+      - name: Generate graphs
+        uses: upptime/uptime-monitor@v1.41.0
+        with:
+          command: graphs
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || github.token }}
 
