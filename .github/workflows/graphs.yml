@@ -37,3 +37,9 @@ jobs:
           command: "graphs"
         env:
           GH_PAT: ${{ secrets.GH_PAT || github.token }}
+
+# ci: force indexing
+on:
+  push:
+    paths:
+      - '.github/workflows/graphs.yml'
