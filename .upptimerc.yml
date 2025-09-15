@@ -1,29 +1,51 @@
 owner: eskogh
 repo: upptime
 
-sites:
   - name: x86.se
-    url: https://x86.se
+    url: https://x86.se/
+    method: GET
+    expectedStatusCodes: [200]
+    __dangerous__body_down_if_text_missing: "OK"
+    maxResponseTime: 20000
+
   - name: resume.skogh.org
     url: https://resume.skogh.org/upptime-health
     method: GET
-    maxResponseTime: 4000
-    expectedStatusCodes:
-      - 200
+    expectedStatusCodes: [200]
+    __dangerous__body_down_if_text_missing: "OK"
+    maxResponseTime: 20000
+    headers:
+      - "User-Agent: upptime-monitor"
+
   - name: Shinobi NVR
     url: https://nvr.x86.se
+    method: GET
+    expectedStatusCodes: [200]
+    __dangerous__body_down_if_text_missing: "OK"
+    maxResponseTime: 20000
+
   - name: upload.linux.army
-    url: https://upload.linux.army
+    url: https://upload.linux.army/upptime-health
+    method: GET
+    expectedStatusCodes: [200]
+    __dangerous__body_down_if_text_missing: "OK"
+    maxResponseTime: 20000
+    headers:
+      - "User-Agent: upptime-monitor"
+
   - name: Homeassistant
     url: https://homeassistant.senate.sx:8123
+    method: GET
+    expectedStatusCodes: [200]
+    __dangerous__body_down_if_text_missing: "OK"
+    maxResponseTime: 20000
 
 status-website:
   themeUrl: "https://status.x86.se/web3-clean.css"
   favicon: https://x86.se/wp-content/uploads/2025/08/cropped-favicon-32x32.png
   cname: status.x86.se
-  name: "x86 Status"
   logoUrl: "https://x86.se/wp-content/uploads/2025/09/x86_white-1.png"
-  introTitle: "**x86 Status** — transparent uptime with a Web3 coat of paint"
+  introTitle: "**x86 Status**"
   introMessage: >
     Live health checks for our sites and APIs, updated automatically every 5 minutes.
     Built with [Upptime](https://github.com/upptime/upptime) and hosted on GitHub Pages.
