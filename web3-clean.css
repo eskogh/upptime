@@ -1,0 +1,168 @@
+/* Web3 Clean Theme for Upptime
+   Author: Erik + GPT
+   Notes: Uses Upptime CSS variables + a glassmorphism layer for a modern "web3" vibe.
+   Safe to tweak colors in the :root block. */
+
+/* ---- Core palette via Upptime theme variables ---- */
+:root {
+  /* base canvas + text */
+  --body-background-color: #0b0f1a;        /* deep blue/indigo */
+  --body-text-color: #e8efff;
+
+  /* cards + nav */
+  --card-background-color: rgba(255, 255, 255, 0.06);
+  --nav-background-color: rgba(255, 255, 255, 0.06);
+  --nav-border-bottom-color: rgba(255, 255, 255, 0.12);
+
+  /* links + accents */
+  --primary-color: #7cf7d4;                /* mint */
+  --hover-color: #a8ffea;                  /* mint glow */
+  --down-color: #ff6b6b;
+  --degraded-color: #ffd166;
+  --up-color: #7cf7d4;
+
+  /* borders + shadows */
+  --card-border-color: rgba(255, 255, 255, 0.16);
+  --shadow-color: rgba(0, 0, 0, 0.35);
+}
+
+/* ---- Background gradient + subtle grid ---- */
+body {
+  background:
+    radial-gradient(1200px 700px at 85% -10%, #1e2442 0%, rgba(30,36,66,0) 60%),
+    radial-gradient(900px 600px at -10% 110%, #18223b 0%, rgba(24,34,59,0) 60%),
+    linear-gradient(180deg, #0b0f1a 0%, #0b1222 100%),
+    var(--body-background-color);
+  color: var(--body-text-color);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Soft grid (optional, comment out to remove) */
+body::before {
+  content: "";
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(transparent 0, transparent calc(100% - 1px), rgba(255,255,255,0.03) 1px),
+    linear-gradient(90deg, transparent 0, transparent calc(100% - 1px), rgba(255,255,255,0.03) 1px);
+  background-size: 24px 24px, 24px 24px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---- Nav (glass + blur) ---- */
+nav, header, .navbar, .Nav, .topnav {
+  background: var(--nav-background-color) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--nav-border-bottom-color);
+  box-shadow: 0 6px 20px var(--shadow-color);
+}
+
+/* ---- Cards (glassmorphism) ---- */
+.card, .box, .panel, .status, .incident, .overview, .ContentCard {
+  background: var(--card-background-color) !important;
+  border: 1px solid var(--card-border-color);
+  border-radius: 16px;
+  box-shadow: 0 16px 40px var(--shadow-color);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.card:hover, .box:hover, .panel:hover, .status:hover, .incident:hover, .overview:hover, .ContentCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+  border-color: rgba(255,255,255,0.28);
+}
+
+/* ---- Headings + typography ---- */
+h1, h2, h3, .title, .hero-title {
+  letter-spacing: .3px;
+  line-height: 1.15;
+}
+
+h1, .hero-title {
+  font-size: clamp(28px, 4vw, 40px);
+  background: linear-gradient(90deg, #7cf7d4, #aab8ff 60%, #7cf7d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 18px rgba(124,247,212,0.25);
+}
+
+/* ---- Links ---- */
+a, a:visited {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color .15s ease, opacity .15s ease;
+}
+a:hover, a:focus {
+  color: var(--hover-color);
+}
+
+/* ---- Status badges ---- */
+.badge, .tag, .status-badge {
+  border-radius: 999px;
+  padding: .35rem .7rem;
+  font-weight: 600;
+  letter-spacing: .2px;
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  backdrop-filter: blur(8px);
+}
+
+.badge.up, .status-up { background: rgba(124,247,212,0.12); color: #9af7e0; }
+.badge.degraded, .status-degraded { background: rgba(255,209,102,0.14); color: #ffe39a; }
+.badge.down, .status-down { background: rgba(255,107,107,0.14); color: #ff9c9c; }
+
+/* ---- Tables (response time, history) ---- */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+thead th {
+  background: rgba(255,255,255,0.08);
+  color: #eaf3ff;
+  font-weight: 600;
+}
+tbody tr { transition: background .15s ease; }
+tbody tr:hover { background: rgba(255,255,255,0.04); }
+td, th {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: .9rem 1rem;
+}
+
+/* ---- Buttons ---- */
+button, .btn, .Button {
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.18);
+  color: var(--body-text-color);
+  padding: .65rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+button:hover, .btn:hover, .Button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+/* ---- Footer ---- */
+footer {
+  opacity: .85;
+}
+
+/* ---- Mobile tweaks ---- */
+@media (max-width: 720px) {
+  .card, .box, .panel, .status, .incident, .overview, .ContentCard { border-radius: 14px; }
+  h1, .hero-title { font-size: clamp(24px, 6vw, 32px); }
+}
+
+/* Optional: Reduce chart grid intensity if present */
+.apexcharts-grid line, .apexcharts-grid polygon {
+  stroke: rgba(255,255,255,0.08) !important;
+}
+
