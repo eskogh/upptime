@@ -19,6 +19,7 @@ sites:
 
 status-website:
   themeUrl: "https://status.x86.se/web3-clean.css"
+  favicon: https://x86.se/wp-content/uploads/2025/08/cropped-favicon-32x32.png
   cname: status.x86.se
   name: "x86 Status"
   logoUrl: "https://x86.se/wp-content/uploads/2025/09/x86_white-1.png"
