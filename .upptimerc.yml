@@ -5,9 +5,15 @@ sites:
   - name: x86
     url: https://x86.se
   - name: Resume
-    url: https://resume.skogh.org
-  - name: Homelab
-    url: https://home.senate.sx
+    url: https://resume.skogh.org/upptime-health
+    method: GET
+    maxResponseTime: 4000
+    expectedStatusCodes:
+      - 200
+  - name: NVR
+    url: https://nvr.x86.se
+  - name: Upload
+    url: https://upload.linux.army
 
 status-website:
   cname: status.x86.se
