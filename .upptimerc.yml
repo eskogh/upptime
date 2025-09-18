@@ -41,6 +41,7 @@ sites:
     maxResponseTime: 20000
 
 status-website:
+  name: "x86.se website uptime status"
   themeUrl: "https://status.x86.se/web3-clean.css"
   favicon: https://x86.se/wp-content/uploads/2025/08/cropped-favicon-32x32.png
   cname: status.x86.se
