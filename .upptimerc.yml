@@ -1,6 +1,6 @@
 owner: eskogh
 repo: upptime
-
+sites:
   - name: x86.se
     url: https://x86.se/
     method: GET
