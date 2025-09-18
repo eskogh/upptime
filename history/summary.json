@@ -4,19 +4,19 @@
     "url": "https://x86.se/",
     "icon": "https://icons.duckduckgo.com/ip3/x86.se.ico",
     "slug": "x86-se",
-    "status": "down",
-    "uptime": "90.98%",
-    "uptimeDay": "73.50%",
-    "uptimeWeek": "90.98%",
-    "uptimeMonth": "90.98%",
-    "uptimeYear": "90.98%",
-    "time": 613,
-    "timeDay": 603,
-    "timeWeek": 613,
-    "timeMonth": 613,
-    "timeYear": 613,
+    "status": "up",
+    "uptime": "89.98%",
+    "uptimeDay": "70.25%",
+    "uptimeWeek": "89.98%",
+    "uptimeMonth": "89.98%",
+    "uptimeYear": "89.98%",
+    "time": 595,
+    "timeDay": 582,
+    "timeWeek": 595,
+    "timeMonth": 595,
+    "timeYear": 595,
     "dailyMinutesDown": {
-      "2025-09-18": 381
+      "2025-09-18": 428
     }
   },
   {
