@@ -2,11 +2,11 @@ owner: eskogh
 repo: upptime
 sites:
   - name: x86.se
-    url: https://x86.se/
+    url: https://x86.se/upptime-health
     method: GET
-    expectedStatusCodes: [200]
-    __dangerous__body_down_if_text_missing: "OK"
+    expectedStatusCodes: [200, 301, 302, 308]  # handle redirects
     maxResponseTime: 20000
+    ipVersion: "v4"
 
   - name: resume.skogh.org
     url: https://resume.skogh.org/upptime-health
