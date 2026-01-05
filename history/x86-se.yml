@@ -1,7 +1,7 @@
 url: https://x86.se/upptime-health
-status: down
+status: degraded
 code: 522
-responseTime: 19460
-lastUpdated: 2026-01-05T20:49:41.028Z
+responseTime: 22300
+lastUpdated: 2026-01-05T21:00:46.273Z
 startTime: 2025-09-15T19:14:50.291Z
 generator: Upptime <https://github.com/upptime/upptime>
