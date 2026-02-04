@@ -1,7 +1,7 @@
 url: https://x86.se/upptime-health
-status: down
+status: degraded
 code: 404
-responseTime: 771
-lastUpdated: 2026-02-03T23:30:23.983Z
+responseTime: 29040
+lastUpdated: 2026-02-04T18:02:03.708Z
 startTime: 2025-09-15T19:14:50.291Z
 generator: Upptime <https://github.com/upptime/upptime>
