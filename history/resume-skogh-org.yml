@@ -1,7 +1,7 @@
 url: https://resume.skogh.org/upptime-health
-status: up
-code: 200
-responseTime: 81
-lastUpdated: 2026-07-01T00:07:00.747Z
+status: down
+code: 500
+responseTime: 563
+lastUpdated: 2026-07-01T01:57:39.187Z
 startTime: 2025-09-15T19:14:51.369Z
 generator: Upptime <https://github.com/upptime/upptime>
